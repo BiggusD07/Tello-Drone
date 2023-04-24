@@ -68,6 +68,7 @@ try:
         sendmsg('ccw 90')
         sendmsg('forward 300')
         sendmsg('down 50')
+        sendmsg('down 50')
 
 
         sendmsg('land')
