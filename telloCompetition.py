@@ -54,17 +54,23 @@ ready = input('\nAre you ready to take flight: ')
 
 
 try:
-    if ready.lower() == 'yes':
+    if ready.lower() == 'y':
         print("\nStarting Drone!\n")
 
         sendmsg('command', 0)
         sendmsg('takeoff')
-        sendmsg('go 200 0 0 50')
-        sendmsg('go 300 0 50 50')
-        sendmsg('curve 125 100 0 125 150 0 30')
-        sendmsg('curve -125 100 0 -125 150 0 30')
-        sendmsg('ccw 180')
-        sendmsg('go 210 0 -50 50')
+        sendmsg('forward 200')
+        sendmsg('go 270 0 50 50', 5)
+        sendmsg('forward 100', 6)
+        sendmsg('curve 90 100 0 80 150 0 30', 8)
+        sendmsg('ccw 90')
+        sendmsg('forward 90')
+        sendmsg('curve 90 100 0 80 150 0 30', 8)
+        sendmsg('up 30')
+        sendmsg('ccw 270')
+        sendmsg('back 100')
+        sendmsg('go -210 0 -50 50')
+
 
         sendmsg('land')
 
